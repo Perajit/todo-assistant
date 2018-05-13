@@ -1,0 +1,88 @@
+[debug] [2018-05-13T19:12:43.595Z] ----------------------------------------------------------------------
+[debug] [2018-05-13T19:12:43.598Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Perajit\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
+[debug] [2018-05-13T19:12:43.599Z] CLI Version:   3.17.4
+[debug] [2018-05-13T19:12:43.599Z] Platform:      win32
+[debug] [2018-05-13T19:12:43.599Z] Node Version:  v7.4.0
+[debug] [2018-05-13T19:12:43.599Z] Time:          Mon May 14 2018 02:12:43 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:12:43.599Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-13T19:12:43.621Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-13T19:12:43.624Z] > authorizing via signed-in user
+[debug] [2018-05-13T19:12:43.628Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 02:12:43 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:12:44.825Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:12:44.828Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-playground-fe11c/tokens  
+  
+ Mon May 14 2018 02:12:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:12:45.768Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Workspace\projects\todo-assistant'...
+[info] 
+[debug] [2018-05-13T19:12:45.777Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 02:12:45 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:12:47.075Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:12:47.076Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/927217960671/clients/_:getWebAppConfig  
+  
+ Mon May 14 2018 02:12:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:12:47.876Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[info] [hosting] Rewriting /api/todos to live function api
+[debug] [2018-05-13T19:53:42.806Z] ----------------------------------------------------------------------
+[debug] [2018-05-13T19:53:42.810Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Perajit\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting,functions
+[debug] [2018-05-13T19:53:42.811Z] CLI Version:   3.17.4
+[debug] [2018-05-13T19:53:42.811Z] Platform:      win32
+[debug] [2018-05-13T19:53:42.811Z] Node Version:  v7.4.0
+[debug] [2018-05-13T19:53:42.812Z] Time:          Mon May 14 2018 02:53:42 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:42.812Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-13T19:53:42.838Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-13T19:53:42.841Z] > authorizing via signed-in user
+[debug] [2018-05-13T19:53:42.846Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-13T19:53:42.846Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/-z7IJXz2OlqFWtz-0Yw0wF6LANUgY7oQSE0DKwiFoQk',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon May 14 2018 02:53:42 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:43.168Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:53:43.224Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 02:53:43 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:44.418Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:53:44.421Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-playground-fe11c/tokens  
+  
+ Mon May 14 2018 02:53:44 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:45.399Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Workspace\projects\todo-assistant'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-13T19:53:51.805Z] Fetching environment
+[debug] [2018-05-13T19:53:51.813Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/fir-playground-fe11c  
+  
+ Mon May 14 2018 02:53:51 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:51.814Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/fir-playground-fe11c/apiKeys  
+  
+ Mon May 14 2018 02:53:51 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:51.815Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 02:53:51 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:53.127Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:53:53.127Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/927217960671/clients/_:getWebAppConfig  
+  
+ Mon May 14 2018 02:53:53 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T19:53:53.243Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:53:53.423Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T19:53:53.426Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-13T19:53:53.872Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-05-13T19:54:02.120Z] Parsing function triggers
+[info] [hosting] Rewriting /api/todos to local function api
+[info] [hosting] Rewriting /api/todos to local function api
