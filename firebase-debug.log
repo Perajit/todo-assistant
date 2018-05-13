@@ -86,3 +86,52 @@
 [debug] [2018-05-13T19:54:02.120Z] Parsing function triggers
 [info] [hosting] Rewriting /api/todos to local function api
 [info] [hosting] Rewriting /api/todos to local function api
+[info] [hosting] Rewriting /api/todos to local function api
+[info] [hosting] Rewriting /api/todos to local function api
+[debug] [2018-05-13T20:05:42.599Z] ----------------------------------------------------------------------
+[debug] [2018-05-13T20:05:42.602Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Perajit\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting,functions
+[debug] [2018-05-13T20:05:42.603Z] CLI Version:   3.17.4
+[debug] [2018-05-13T20:05:42.603Z] Platform:      win32
+[debug] [2018-05-13T20:05:42.603Z] Node Version:  v7.4.0
+[debug] [2018-05-13T20:05:42.603Z] Time:          Mon May 14 2018 03:05:42 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:42.603Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-13T20:05:42.626Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-13T20:05:42.629Z] > authorizing via signed-in user
+[debug] [2018-05-13T20:05:42.633Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 03:05:42 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:43.993Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T20:05:43.995Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-playground-fe11c/tokens  
+  
+ Mon May 14 2018 03:05:43 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:45.369Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Workspace\projects\todo-assistant'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-13T20:05:46.440Z] Fetching environment
+[debug] [2018-05-13T20:05:46.445Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/fir-playground-fe11c  
+  
+ Mon May 14 2018 03:05:46 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:46.446Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/fir-playground-fe11c/apiKeys  
+  
+ Mon May 14 2018 03:05:46 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:46.448Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-playground-fe11c  
+  
+ Mon May 14 2018 03:05:46 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:47.715Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T20:05:47.717Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/927217960671/clients/_:getWebAppConfig  
+  
+ Mon May 14 2018 03:05:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-05-13T20:05:47.843Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T20:05:48.049Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T20:05:48.051Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-13T20:05:48.387Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-05-13T20:05:51.745Z] Parsing function triggers
+[info] [hosting] Rewriting /api/todos to local function api
+[info] +  functions: api: http://localhost:5001/fir-playground-fe11c/us-central1/api
+[info] [hosting] Rewriting /api/todos to local function api
