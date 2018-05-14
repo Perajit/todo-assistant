@@ -1,5 +1,11 @@
+const functions = require('firebase-functions');
 const moment = require('moment');
 const todoService = require('../../services/todoService');
+const messageService = require('../../services/messageService');
+
+const {
+  APP_URL
+} = require('../../constants/configs');
 
 const handleMessage = (req, res) => {
   const { events } = req.body;
@@ -8,7 +14,7 @@ const handleMessage = (req, res) => {
     .filter(filterEvent)
     .forEach(handleEvent);
 
-  res.send(200);
+  res.sendStatus  (200);
 };
 
 const filterEvent = (event) => {
@@ -25,6 +31,7 @@ const filterEvent = (event) => {
 
 const handleEvent = (event) => {
   const {
+    replyToken,
     source: { userId },
     message: {
       id: messageId,
@@ -33,23 +40,23 @@ const handleEvent = (event) => {
   } = event;
 
   if (messageText === 'edit') {
-    handleEditing();
+    handleEditing(replyToken);
   }
   else {
     const todoInfo = extractTodoInfo(messageText);
 
     if (todoInfo) {
-      handleAdding(Object.assign({}, todoInfo, { userId }));
+      handleAdding(Object.assign({}, todoInfo, { userId }), replyToken);
     }
   }
 };
 
 const extractTodoInfo = (messageText) => {
-  const [task, dateStr, timeStr] = messageText.split(' : ');
+  const [title, dateStr, timeStr] = messageText.split(' : ');
   const datetime = extractDateTime(dateStr, timeStr);
 
   return datetime ? {
-    task,
+    title,
     time: datetime
   } : null;
 };
@@ -93,13 +100,27 @@ const extractDateTime = (dateStr, timeStr) => {
   return mDate.toDate();
 };
 
-// TODO
-const handleEditing = () => {
-  console.log('***** handle editing');
+const handleEditing = (replyToken) => {
+  const message = {
+    type: 'text',
+    text: APP_URL
+  };
+
+  return messageService.replyMessages(replyToken, [message]);
 };
 
-const handleAdding = (todo) => {
-  todoService.addTodoData(todo);
+const handleAdding = (todo, replyToken) => {
+  return todoService.addTodoData(todo)
+    .then((todo) => {
+      const messasge = `Added todo "${todo.title}"`;
+      return messageService.replyMessages(replyToken, [message]);
+    })
+    .catch((err) => {
+      const messasge = `Failed to add todo "${todo.title}"`;
+      messageService.replyMessages(replyToken, [message]);
+
+      throw err;
+    });
 };
 
 module.exports = {
