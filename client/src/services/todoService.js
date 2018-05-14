@@ -11,6 +11,10 @@ const getTodos = () => {
     auth: { user }
   } = store.getState();
 
+  if (!user) {
+    return Promise.resolve(null);
+  }
+
   return request(`${TODOS_ENDPOINT}?userId=${user.sub}`)
     .then((json) => json.todos);
 };

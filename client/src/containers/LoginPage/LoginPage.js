@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 import authService from '../../services/authService';
 
-const redirectIfNeeded = () => {
-};
+import {
+  AUTH_ENDPOINT
+} from '../../constants/endpoints';
 
 const LoginPage = (props) => {
   const {
@@ -15,7 +16,17 @@ const LoginPage = (props) => {
 
   return shouldShowLogin ? (
     <div>
-      <div><a href={ authService.getLoginUrl() }>Login with LINE</a></div>
+      <div>
+        <button
+          onClick={
+            () => {
+              window.location = AUTH_ENDPOINT;
+            }
+          }
+        >
+        Log In
+        </button>
+      </div>
       { error ? <div>{ error }</div> : null }
     </div>
   ) : null;

@@ -1,5 +1,9 @@
 const authService = require('../../services/authService');
 
+const redirectToLogin = (req, res) => {
+  res.redirect(302, authService.getLoginUrl());
+};
+
 const getAuthUser = (resultName, req, res) => {
   const params = req.body;
 
@@ -23,5 +27,6 @@ const _execute = (query, resultName, res) => {
 };
 
 module.exports = {
+  redirectToLogin,
   getAuthUser
 };
