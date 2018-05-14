@@ -28,7 +28,6 @@ const _getQueryByConditions = (conditions) => {
   let query = collectionRef;
 
   for (let key in conditions) {
-    console.log({ key, value: conditions[key]})
     query = query.where(key, '==', conditions[key]);
   }
 
@@ -36,7 +35,10 @@ const _getQueryByConditions = (conditions) => {
 };
 
 const _saveDocById = (id, data) => {
-  return _getDocById(id).set(data, { merge: true });
+  const docRef = _getDocById(id);
+
+  return docRef.set(data, { merge: true })
+    .then((res) => data);
 };
 
 const _getDocById = (id) => {

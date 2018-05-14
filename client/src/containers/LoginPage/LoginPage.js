@@ -17,6 +17,7 @@ const LoginPage = (props) => {
   return shouldShowLogin ? (
     <div>
       <div>
+        <div>Please log in</div>
         <button
           onClick={
             () => {

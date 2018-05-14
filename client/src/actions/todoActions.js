@@ -27,7 +27,7 @@ export const getTodos = () => {
 
 export const updateTodo = (oldTodo, newTodo) => {
   const createRequestAction = (oldTodo, newTodo) => ({ type: UPDATE_TODO_REQUEST, oldTodo, newTodo });
-  const createSuccessAction = (todo) => ({ type: UPDATE_TODO_SUCCESS, todo });
+  const createSuccessAction = (updated) => ({ type: UPDATE_TODO_SUCCESS, updated });
   const createFailureAction = (error) => ({ type: UPDATE_TODO_FAILURE, error });
 
   return createActions({ createRequestAction, createSuccessAction, createFailureAction }, todoService.updateTodo, newTodo);

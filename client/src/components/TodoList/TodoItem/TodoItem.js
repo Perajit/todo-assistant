@@ -42,6 +42,7 @@ const TodoItem = (props) => {
       <div>
         <input
           type="checkbox"
+          name="important"
           defaultChecked={ important }
           onClick={ handleToggleImportant(props) }
         />
@@ -50,6 +51,7 @@ const TodoItem = (props) => {
       <div>
         <input
           type="checkbox"
+          name="completed"
           defaultChecked={ completed }
           onClick={ handleToggleCompleted(props) }
         />

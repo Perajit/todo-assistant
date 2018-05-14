@@ -8,11 +8,11 @@ router.get('', (req, res) => {
 });
 
 router.post('', (req, res) => {
-  todoController.addTodo('addedTodo', req, res);
+  todoController.addTodo('added', req, res);
 });
 
 router.put('/:id', (req, res) => {
-  todoController.updateTodo('updatedTodo', req, res);
+  todoController.updateTodo('updated', req, res);
 });
 
 module.exports = router;

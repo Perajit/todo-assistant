@@ -12,27 +12,31 @@ const initialState = [];
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_TODOS_SUCCESS:
-      return _.orderBy(action.todos, ['important','datetime'], ['desc', 'desc']);
+      return _(action.todos)
+        .map((todo) => Object.assign({}, todo, { important: !!todo.important }))
+        .orderBy(['important','datetime'], ['desc', 'desc'])
+        .value();
 
     case UPDATE_TODO_SUCCESS:
-      const { todo } = action;
-      const index = state.findIndex((item) => item.id === todo.id);
+      const { updated } = action;
+      const index = state.findIndex((item) => item.id === updated.id);
       const oldTodo = state[index];
+      const newTodo = Object.assign({}, oldTodo, updated);
       const headTodos = state.slice(0, index);
       const tailTodos = state.slice(index + 1);
 
-      if (todo.important === oldTodo.important) {
-        return headTodos.concat(todo).concat(tailTodos);
+      if (newTodo.important === oldTodo.important) {
+        return headTodos.concat(newTodo).concat(tailTodos);
       }
 
       const otherTodos =headTodos.concat(tailTodos);
-      const groups = _.groupBy(otherTodos, (todo) => !!todo.important);
+      const groups = _.groupBy(otherTodos, (newTodo) => !!newTodo.important);
 
-      if (todo.important) {
-        return _.orderBy(groups[true].concat(todo), 'datetime').concat(groups[false]);
+      if (newTodo.important) {
+        return _.orderBy(groups[true].concat(newTodo), 'datetime').concat(groups[false]);
       }
       else {
-        return groups[true].concat(todo).concat(groups[false]);
+        return groups[true].concat(newTodo).concat(groups[false]);
       }
 
     case UPDATE_TODO_ORDER:

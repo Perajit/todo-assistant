@@ -29,7 +29,7 @@ const updateTodo = (todo) => {
   };
 
   return request(`${TODOS_ENDPOINT}/${todo.id}?`, requestOptions)
-    .then((json) => json.updatedTodo);
+    .then((json) => json.updated);
 };
 
 export default {
