@@ -1,8 +1,7 @@
 const todoService = require('../../services/todoService');
 
 const getTodos = (resultName, req, res) => {
-  const { userId } = req.query;
-  const conditions = { userId };
+  const conditions = req.query;
 
   _execute(todoService.getTodosData(conditions), resultName, res);
 };
