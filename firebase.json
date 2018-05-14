@@ -26,7 +26,10 @@
       }
     ],
     "predeploy": [
-      "npm --prefix web run build"
+      "npm --prefix client run build"
+    ],
+    "headers": [
+      { "source":"/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}] }
     ]
   }
 }

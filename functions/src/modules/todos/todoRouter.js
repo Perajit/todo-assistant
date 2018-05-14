@@ -4,7 +4,6 @@ const todoController = require('./todoController');
 const router = express.Router();
 
 router.get('', (req, res) => {
-  console.log('************** todoRouter')
   todoController.getTodos('todos', req, res);
 });
 

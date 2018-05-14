@@ -1,17 +1,56 @@
-// FIXME
-const getAuthUser = (payload) => {
+const functions = require('firebase-functions');
+const querystring = require('querystring');
+const jwt = require('jsonwebtoken');
+require('isomorphic-fetch');
+
+const {
+  LINE_AUTH_TOKEN_ENDPOINT
+} = require('../constants/endpoints');
+
+const {
+  LINE_CLIENT_ID
+} = require('../constants/configs');
+
+const LINE_CHN_SCR = functions.config().todo.chnscr;
+
+const getAccessToken = (params) => {
+  const payload = Object.assign({}, params, {
+    grant_type: 'authorization_code',
+    client_id: LINE_CLIENT_ID,
+    client_secret: LINE_CHN_SCR
+  });
+
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: querystring.stringify(payload)
+  };
+
+  return fetch(LINE_AUTH_TOKEN_ENDPOINT, requestOptions)
+    .then((res) => {
+      return res.json()
+    });
+};
+
+const getUserProfile = (id_token) => {
   return new Promise((resolve, reject) => {
-    resolve({
-      iss: 'https://access.line.me', 
-      sub: 'U1234567890abcdef1234567890abcdef ',
-      aud: '1234567890', 
-      exp: 1504169092, 
-      iat: 1504263657, 
-      nonce: '0987654asdf', 
-      name: 'Taro Line', 
-      picture: 'https://sample_line.me/aBcdefg123456', 
+    jwt.verify(id_token, LINE_CHN_SCR, (err, decoded) => {
+      if (err) {
+        reject(err);
+      }
+
+      resolve(decoded);
     });
   });
+};
+
+const getAuthUser = (payload) => {
+  return getAccessToken(payload)
+    .then((asscessToken) => {
+      return getUserProfile(asscessToken.id_token);
+    });
 };
 
 module.exports = {

@@ -1,0 +1,21 @@
+:root {
+  --default-font-family: Kanit;
+  --default-font-size: 13px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  --webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+ul, li {
+  list-style: none;
+}
