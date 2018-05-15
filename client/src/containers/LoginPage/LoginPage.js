@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Button from 'material-ui/Button';
 
 import authService from '../../services/authService';
 
@@ -7,26 +9,37 @@ import {
   AUTH_ENDPOINT
 } from '../../constants/endpoints';
 
+const styles = (theme) => ({
+  root: {
+    textAlign: 'center'
+  },
+  loginButton: {
+    margin: theme.spacing.unit * 2
+  }
+});
+
+const onClickLogin = () => {
+  window.location = AUTH_ENDPOINT;
+};
+
 const LoginPage = (props) => {
   const {
+    classes,
     auth: { error, user, waiting }
   } = props;
 
   const shouldShowLogin = !waiting && !user;
 
   return shouldShowLogin ? (
-    <div>
+    <div className={ classes.root }>
       <div>
-        <div>Please log in</div>
-        <button
-          onClick={
-            () => {
-              window.location = AUTH_ENDPOINT;
-            }
-          }
+        <Button
+          variant="raised"
+          color="secondary"
+          onClick={ onClickLogin }
         >
-        Log In
-        </button>
+          Log In
+        </Button>
       </div>
       { error ? <div>{ error }</div> : null }
     </div>
@@ -34,7 +47,8 @@ const LoginPage = (props) => {
 };
 
 LoginPage.propTypes = {
+  classes: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
 
-export default LoginPage;
+export default withStyles(styles)(LoginPage);

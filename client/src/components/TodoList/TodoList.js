@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, withProps } from 'recompose';
 import { SortableContainer } from 'react-sortable-hoc';
+import List from 'material-ui/List';
 import TodoItem from './TodoItem';
 
 const handleToggleCompleted = (props, index) => (detail) => {
@@ -33,15 +34,16 @@ const shouldCancelStartSorting = (event) => {
   // Workaround to fix click event for inputs
   const target = event.target;
   const isInput = target.tagName.toLowerCase() === 'input';
+  const isIcon = /icon/i.test(target.className);
 
-  return isInput;
+  return isInput || isIcon;
 };
 
 const TodoList = (props) => {
   const { items } = props;
 
   return (
-    <ul>
+    <List>
       {
         items.map((item, index) => (
           <TodoItem
@@ -54,7 +56,7 @@ const TodoList = (props) => {
           />
         ))
       }
-    </ul>
+    </List>
   );
 };
 
