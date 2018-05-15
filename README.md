@@ -21,6 +21,10 @@ This project is based on [Firebase](https://firebase.google.com/) and contains 2
 }
 ```
 (Replace the "firebase-proj-name" with your firebase project name)
+- Run commmand:
+```
+npm run install-all
+```
 
 ## Run application locally
 At the root directory, run commmand:
