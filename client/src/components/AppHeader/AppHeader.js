@@ -9,7 +9,7 @@ const AppHeader = (props) => {
 
   return (
     <div style={ { display: 'flex', padding: 10, backgroundColor: 'blue', color: 'white' } }>
-      <div style={{ flex: 1 }}>{ appTitle }}</div>
+      <div style={{ flex: 1 }}>{ appTitle }</div>
       <div>{ user ? `Welcome ${user.name}` : null }</div>
     </div>
   );
