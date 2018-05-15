@@ -1,0 +1,24 @@
+{
+  "name": "todo-assistant",
+  "version": "1.0.0",
+  "description": "A system assisting on managing todo list. Users can simply add a new todo item via LINE BOT, or use it to link to an edit page where they can view or manage their todo list.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build-server && npm run build-client && npm run serve",
+    "build-server": "npm --prefix server install  && npm --prefix server run build",
+    "build-client": "npm --prefix client install && npm --prefix client run build",
+    "serve": "firebase serve --only functions,hosting",
+    "deploy": "firebase deploy --only functions,hosting",
+    "test": "npm --prefix client run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Perajit/todo-assistant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Perajit/todo-assistant/issues"
+  },
+  "homepage": "https://github.com/Perajit/todo-assistant#readme"
+}

@@ -22,14 +22,6 @@ const getLoginUrl = () => {
 };
 
 const getAccessToken = (params) => {
-  console.log({
-    payload: Object.assign({}, params, {
-      grant_type: 'authorization_code',
-      client_id: LINE_CLIENT_ID,
-      client_secret: LINE_CHN_SCR,
-      redirect_uri: APP_URL
-    })
-  })
   const requestOptions = {
     method: 'POST',
     headers: {
