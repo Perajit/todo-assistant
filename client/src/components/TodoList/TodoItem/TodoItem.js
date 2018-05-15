@@ -31,7 +31,7 @@ const TodoItem = (props) => {
   const {
     item: {
       title,
-      datetime,
+      time,
       important,
       completed
     }
@@ -58,7 +58,7 @@ const TodoItem = (props) => {
         completed
       </div>
       <div>{ title }</div>
-      <div>{ moment(datetime).format('DD/MM/YY hh:mm') }</div>
+      <div>{ moment(time).format('DD/MM/YY hh:mm') }</div>
     </li>
   );
 }

@@ -14,7 +14,7 @@ const todosReducer = (state = initialState, action) => {
     case GET_TODOS_SUCCESS:
       return _(action.todos)
         .map((todo) => Object.assign({}, todo, { important: !!todo.important }))
-        .orderBy(['important','datetime'], ['desc', 'desc'])
+        .orderBy(['important','time'], ['desc', 'desc'])
         .value();
 
     case UPDATE_TODO_SUCCESS:
@@ -33,7 +33,7 @@ const todosReducer = (state = initialState, action) => {
       const groups = _.groupBy(otherTodos, (newTodo) => !!newTodo.important);
 
       if (newTodo.important) {
-        return _.orderBy(groups[true].concat(newTodo), 'datetime').concat(groups[false]);
+        return _.orderBy(groups[true].concat(newTodo), 'time').concat(groups[false]);
       }
       else {
         return groups[true].concat(newTodo).concat(groups[false]);
