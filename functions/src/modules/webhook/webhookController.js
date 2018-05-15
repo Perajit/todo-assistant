@@ -112,11 +112,11 @@ const handleEditing = (replyToken) => {
 const handleAdding = (todo, replyToken) => {
   return todoService.addTodoData(todo)
     .then((todo) => {
-      const messasge = `Added todo "${todo.title}"`;
+      const message = `Added todo "${todo.title}"`;
       return messageService.replyMessages(replyToken, [message]);
     })
     .catch((err) => {
-      const messasge = `Failed to add todo "${todo.title}"`;
+      const message = `Failed to add todo "${todo.title}"`;
       messageService.replyMessages(replyToken, [message]);
 
       throw err;
